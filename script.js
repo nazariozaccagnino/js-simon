@@ -15,9 +15,10 @@ startGame.addEventListener ('click', function (){
     }console.log(casualNumbers, 'array dei numeri casuali');
 
     casualNumbers.forEach((element) => {
-       const div = document.createElement("div");
-        div.innerHTML = `${element}`;
-        document.body.appendChild(div);
+       const span = document.createElement("span");
+        span.innerHTML = ` ${element}`;
+        span.classList.add('fs-1', 'text-center', 'card')
+        document.body.appendChild(span);
     }
     );
 
