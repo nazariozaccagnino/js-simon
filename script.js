@@ -21,8 +21,15 @@ startGame.addEventListener ('click', function (){
         document.body.appendChild(span);
     }
     );
-
+    
+    setTimeout(hideNumbers, 4000)
     
 })
 
-
+//creo la funzione per nascondere i numeri
+function hideNumbers(){
+    let myList = document.getElementsByTagName("span");
+    for (i = 0; i < myList.length; i++) {
+        myList[i].className = "d-none";
+}
+}
