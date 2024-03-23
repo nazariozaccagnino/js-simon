@@ -3,6 +3,7 @@ function getRndInteger(min, max) {
 }
 
 const casualNumbers = [];
+const userNumbers =[];
 const startGame = document.getElementById('startgame');
 
 startGame.addEventListener ('click', function (){
@@ -32,7 +33,7 @@ function hideNumbers(){
 }
 }
 
-setTimeout(hideNumbers, 4000)
+setTimeout(hideNumbers, 5000)
 
 //creo la funzione per generare i form
 
@@ -41,8 +42,29 @@ function createForms(){
         const form = document.createElement("div");
         form.innerHTML = `<input type="number" class="form-control" placeholder="Inserisci numero">`;
         // span.classList.add('fs-1', 'text-center', 'card')
-        document.body.appendChild(form);
+        document.body.appendChild(form);        
     }
+    const send = document.createElement("div");
+    send.innerHTML = `<button type="button" class="btn btn-danger" id="send">Invia</button>`
+    document.body.appendChild(send);
 }
 
 setTimeout(createForms, 6000)
+
+setTimeout(function() {
+        const sendNumbers = document.getElementById('send');
+        sendNumbers.addEventListener ('click', function (){    
+            console.log('ho cliccato, dovrebbe funzionare')
+            let numbers = document.getElementsByTagName("input");
+            for(let k = 0; k<numbers.length; k++){   
+                let azz = numbers.value
+                console.log(azz, 'azzzz')
+                
+            }console.log(numbers, 'htddhhdt');
+            
+            
+            console.log(userNumbers);
+        })
+        
+}, 7000);
+
